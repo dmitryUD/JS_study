@@ -17,7 +17,7 @@
 // }
 
 // конструкция switch - работает только на строгое сравнение 
-const num = 50;
+const num = 51;
 switch(num) {
     case 49:
         console.log("Неверно");
@@ -32,6 +32,68 @@ switch(num) {
         console.log("Не в этот раз");
         break;
 }
+// пример без break 
+let a = 3+5;
+switch(a) {
+    case 2:
+        console.log("Маловато");
+        break;
+    case 8:
+        console.log("Верно!");
+    case 12: 
+        console.log("На 4 больше!!!");
+    case 6:
+        console.log("На 2 меньше!");
+} 
+// любое выражение может быть аргументом для switch/case
+let b = "1";
+let c = 0;
+switch(+b) {
+    case c+1:
+        console.log("Выполнится, так как c+1 = +b");
+        break;
+    default:
+        console.log("Это не выполнится");
+}
+
+// группировка case 
+let d = 2+2;
+switch(d) {
+    case 4: 
+        console.log("Правильно!");
+        break;
+    case 5:
+    case 3:
+        console.log("Неверно!");
+        console.log("Вообще неверно!");
+        break;
+}
+// ЗАДАНИЯ ПО SWITCH
+let browser = "Firefox";
+if (browser == "Edge") {
+    console.log("You've got the Edge");
+} else if (browser == "Chrome" 
+    || browser == "Firefox" 
+    || browser == "Safari" 
+    || browser == "Opera") {
+    console.log("Okay we support these browsers too");
+} else {
+    console.log("We hope that this page looks ok!");
+}
+
+const number = +prompt("Введите число от 0 до 3");
+switch(number) {
+    case 0:
+        alert("Вы ввели 0");
+        break;
+    case 1:
+        alert("Вы ввели 1");
+        break;
+    case 2 || 3:
+        alert("Вы ввели 2 или 3");
+        break;
+}
+
 // Условный оператор "?" или тернарный оператор 
 // let result = условие ? значение1 : значение2
 // let accessAllowed;
@@ -93,9 +155,9 @@ switch(num) {
 // let result = (a+b < 4) ? alert("Мало") : alert("Много");
 
 // Задание №4
-let login = prompt("Введите логин");
-let message = (login == "Сотрудник") ? alert("Привет") :
-    (login == "Директор") ? alert("Здравствуйте") :
-    (login == "") ? alert("Нет логина") :
-    alert("ты кто такой?");
+// let login = prompt("Введите логин");
+// let message = (login == "Сотрудник") ? alert("Привет") :
+//     (login == "Директор") ? alert("Здравствуйте") :
+//     (login == "") ? alert("Нет логина") :
+//     alert("ты кто такой?");
 
