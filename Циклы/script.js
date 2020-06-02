@@ -1,26 +1,32 @@
 'use strict';
 
-// let num = 50; 
-// while (num<=55) {
-//     console.log(num);
-//     num++;
-// }
+let num = 50; 
+while (num<=55) {
+    console.log(num);
+    num++;
+}
 
-// do {
-//     console.log(num);
-//     num++;
-// }
-// while (num<55);
+do {
+    console.log(num);
+    num++;
+}
+while (num<55);
+
+let i = 3;
+while (i) {
+    console.log(i);
+    i--;
+}
 
 // цикл for 
 
-// for (let i=1; i < 10; i++) {
-//     if (i === 6) {
-//         // break;
-//         continue;
-//     }
-//     console.log(i);
-// }
+for (let i=1; i < 10; i++) {
+    if (i === 6) {
+        // break;
+        continue; // пропустить вывод i = 6. Переход к следующей итерации 
+    }
+    console.log(i);
+}
 
 // let sum = 0;
 // while(true) {
@@ -30,24 +36,23 @@
 //     }
 //     sum += value;
 // }
-// alert("Сумма:" + sum);
+// alert("Сумма: " + sum);
 
 // // вывод нечетных чисел 
-// for (let i = 0; i < 20; i++) {
-//     if (i % 2 == 0) {
-//         continue;
-//     }
-//     console.log(i);
-// }
+for (let i = 0; i < 20; i++) {
+    if (i % 2 == 0) {
+        continue;
+    }
+    console.log(i);
+}
 
-////////////////////////////////////////////////////////////////
-// for (let i = 0; i < 3; i++) {
-//     for (let j = 0; j < 3; j++) {
-//         let input = prompt(`Значение на координатах (${i}, ${j})`, '');
-//         console.log(`Координата: (${i},${j}) имеет значение ` + input);
-//     }
-    
-// }
+// вложенные циклы
+for (let i = 0; i < 3; i++) {
+    for (let j = 0; j < 3; j++) {
+        let input = prompt(`Значение на координатах (${i}, ${j})`, '');
+        console.log(`Координата: (${i},${j}) имеет значение ` + input);
+    }
+}
 
 ////////////////////////////////////////////////////////////////
 // outer: for(let i = 0; i<3; i++) {
@@ -122,6 +127,9 @@
 //     }
 //     alert(i);
 // }
+
+// метки для break/continue
+
 
 
 
