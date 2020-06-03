@@ -11,7 +11,7 @@ let user = {
 // console.log(user.name);
 // добавление свойства
 user.isAdmin = true;
-// console.log(user);
+console.log(user);
 // удаление свойства
 delete user.age;
 // console.log(user);
@@ -40,7 +40,7 @@ const options = {
 options.makeTest();
 
 const {border, background} = options.colors;
-console.log(border);
+console.log(border); 
 
 // console.log(Object.keys(options).length);
 
@@ -49,12 +49,11 @@ console.log(border);
 // // delete
 // delete options.name;
 // console.log(options);
-
 //
 let counter = 0; 
 for (let key in options) {
     if (typeof (options[key]) == 'object') {
-        for (let i in options[key]) {
+        for (let i in options[key]) { // запуск перебора внутри перебора
             console.log(`Свойство ${i} имеет значение ${options[key][i]}`);
             // counter++;
         }
@@ -70,7 +69,7 @@ let fruit = "apple"; // или можно запросить фрукт чере
 let bag = {
     [fruit]: 5
 };
-console.log(bag.apple);
+console.log(bag.apple); // 5, если fruit="apple"
 
 // немного сложнее
 let Fruit = "apple";
@@ -79,6 +78,13 @@ let Bag = {
 };
 console.log(Bag);
 
+let first = "Java",
+    second = "Script";
+let Obj = {
+    [first + second]: 8,
+};
+console.log(Obj);
+
 // Свойство из переменной 
 function makeUser(name, age) {
     return {
@@ -86,8 +92,8 @@ function makeUser(name, age) {
         age, // то же самое, что и age: age
     };
 }
-let user = makeUser("John",30);
-console.log(user.name);
+let user = makeUser("John", 30);
+console.log(user);
 
 // ограничения на имена свойств
 let obj = {
@@ -107,40 +113,40 @@ console.log(Obj.let + Obj.for + Obj.return);
 ///////////////////////////////////////////////////////////////////////
 // Проверка существования свойства, оператор in
 //
-let user = {};
-console.log(user.noSuchProperty === undefined);
+// let user = {};
+// console.log(user.noSuchProperty === undefined);
 
 // слева от оператора in должно быть имя свойства
-let user = {
-    name: "John",
-    age: 30,
-};
-console.log("name" in user);
-console.log("blabla" in user);
+// let user = {
+//     name: "John",
+//     age: 30,
+// };
+// console.log("name" in user);
+// console.log("blabla" in user);
 
 // если опустить кавычки, это значит, что мы указываем переменную, в которой находится имя свойства
-let user = {age : 30};
-let key = "age";
-console.log(key in user);
+// let user = {age : 30};
+// let key = "age";
+// console.log(key in user);
 
 //
-let obj = {
-    test: undefined
-};
-console.log(obj.test);
-console.log("test" in obj);
+// let obj = {
+//     test: undefined
+// };
+// console.log(obj.test);
+// console.log("test" in obj);
 
-// цикл for ..in
-let user = {
-    name: "John",
-    age: 30,
-    isAdmin: true,
-};
-for (let key in user) {
-    //console.log(key); // ключи или имена
-    //console.log(user[key]); // значения 
-    console.log(`Ключ ${key} имеет значение ${user[key]}`);
-}
+// цикл for ..in - перебор объекта
+// let user = {
+//     name: "John",
+//     age: 30,
+//     isAdmin: true,
+// };
+// for (let key in user) {
+//     //console.log(key); // ключи или имена
+//     //console.log(user[key]); // значения 
+//     console.log(`Ключ ${key} имеет значение ${user[key]}`);
+// }
 ///////////////////////////////////////////////////////////////
 // упорядочение свойств объекта 
 let codes = {
@@ -153,12 +159,12 @@ for (let code in codes) {
     console.log(code);
 }
 
-// 
-let user = {
-    name: "John",
-    surname: "Smith"
-};
-user.age = 25; // добавление еще одного свойства
+// // 
+// let user = {
+//     name: "John",
+//     surname: "Smith"
+// };
+// user.age = 25; // добавление еще одного свойства
 
 // нецелочисленные свойства перечисляются в порядке создания
 for (let prop in user) {
@@ -166,15 +172,15 @@ for (let prop in user) {
 }
 
 // обхитрить 
-let codes = {
-    "+49": "Германия",
-    "+41": "Швейцария",
-    "+44": "Великобритания",
-    "+1": "США",
-};
-for (let code in codes) {
-    console.log(code);
-}
+// let codes = {
+//     "+49": "Германия",
+//     "+41": "Швейцария",
+//     "+44": "Великобритания",
+//     "+1": "США",
+// };
+// for (let code in codes) {
+//     console.log(code);
+// }
 
 // копирование по ссылке
 let message = "Hello";
@@ -182,9 +188,9 @@ let phrase = message;
 console.log(phrase);
 
 // ОБЪЕКТ. Переменная ханит не сам объект, а его адрес в памяти (ссылку на него)
-let user = {
-    name: "John",
-}
+// let user = {
+//     name: "John",
+// }
 // сам объект хранится в памяти, а в переменной user лежит ссылка на эту область памяти
 
 // когда переменная объекта копируется - копируется сама ссылка, объект не дублируется
@@ -193,10 +199,10 @@ let Admin = User; // копируется ссылка
 console.log(Admin);
 
 // Демонстрирует, что объект только один!
-let User = { name: "John" };
-let Admin = User;
-Admin.name = "Pete";
-console.log(User.name);
+// let User = { name: "John" };
+// let Admin = User;
+// Admin.name = "Pete";
+// console.log(User.name);
 
 // Два объекта равны только в том случае, если это один и тот же объект
 let a = {};
@@ -212,23 +218,23 @@ console.log(A === B);
 
 // объекты-константы
 // объект, объявленный через CONST, может быть изменен
-const user = {
-    name: "John"
-};
-user.age = 25;
-console.log(user);
+// const user = {
+//     name: "John"
+// };
+// user.age = 25;
+// console.log(user);
 
 // клонирование и объединение объектов. Object.assign
-let user = {
-    name: "John",
-    age: 30
-};
-let clone = {}; // новый пустой объект
-// копирование всех свойств user в clone
-for (let key in user) {
-    clone[key] = user[key];
-}
-console.log(clone);
+// let user = {
+//     name: "John",
+//     age: 30
+// };
+// let clone = {}; // новый пустой объект
+// // копирование всех свойств user в clone
+// for (let key in user) {
+//     clone[key] = user[key];
+// }
+// console.log(clone);
 // в переменной clone находится абсолютно независимый клон объекта 
 // изменение данных
 clone.name = "Pete";
@@ -237,45 +243,45 @@ console.log(user.name);
 // метод Object.assign
 
 // объединение нескольких объектов в один
-let user = {name:"John"};
-let permission1 = {canView: true};
-let permission2 = { canEdit: true };
-Object.assign(user, permission1, permission2); // копирование свойств из permission 1 и permission2
-console.log(user);
+// let user = {name:"John"};
+// let permission1 = {canView: true};
+// let permission2 = { canEdit: true };
+// Object.assign(user, permission1, permission2); // копирование свойств из permission 1 и permission2
+// console.log(user);
 
 // перезаписывание свойства name и добавление свойства isAdmin 
-let user = {name: "John"};
-Object.assign(user, {name: "Pete", isAdmin: true});
-console.log(user);
+// let user = {name: "John"};
+// Object.assign(user, {name: "Pete", isAdmin: true});
+// console.log(user);
 
 // клонирование
-let user = {
-    name: "John",
-    age: 30
-};
-let clone = Object.assign({}, user);
-console.log(clone);
+// let user = {
+//     name: "John",
+//     age: 30
+// };
+// let clone = Object.assign({}, user);
+// console.log(clone);
 
 // 
-let user = {
-    name: "John",
-    sizes: {
-        height: 182,
-        width: 50
-    }
-};
-console.log(user.sizes.height);
+// let user = {
+//     name: "John",
+//     sizes: {
+//         height: 182,
+//         width: 50
+//     }
+// };
+// console.log(user.sizes.height);
 
 // ЗАДАНИЯ
 // #1
-let user = {};
-user.name = "John";
-user.surname = "Smith";
-console.log(user);
-user.name = "Pete";
-console.log(user);
-delete user.name;
-console.log(user);
+// let user = {};
+// user.name = "John";
+// user.surname = "Smith";
+// console.log(user);
+// user.name = "Pete";
+// console.log(user);
+// delete user.name;
+// console.log(user);
 
 // #2
 function isEmpty(obj) {
@@ -315,3 +321,24 @@ function multiplyNumeric(menu) {
 }
 multiplyNumeric();
 
+
+// Мои практики
+let topic = {
+    PE: 100,
+    Math: 86,
+    IT: 99,
+    Right: {
+        firstSemester: 89,
+        secondSemester: 79,
+    }
+};
+
+for (let key in topic) {
+    if (typeof(topic[key]) == "object") {
+        for(let k in topic[key]) {
+            console.log(`В ${k} я набрал ${topic[key][k]}`);
+        }
+    } else {
+        console.log(`По предмету ${key} я набрал ${topic[key]}`);
+    }
+}
