@@ -333,6 +333,11 @@ let topic = {
     }
 };
 
+for(let key in topic) {
+    console.log(key); // выводит ключи свойства
+    console.log(topic[key]); // выводит значения свойства
+}
+
 for (let key in topic) {
     if (typeof(topic[key]) == "object") {
         for(let k in topic[key]) {

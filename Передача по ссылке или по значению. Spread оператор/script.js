@@ -95,3 +95,25 @@ const q = {
 const NewObj = {...q};
 console.log(NewObj);
 
+
+// мои практики
+function double(firstObj) {
+    let MainObj = {};
+    for (let key in firstObj) {
+        MainObj[key] = firstObj[key]; // важна именно такая последовательность!!!
+    }
+    return MainObj;
+}
+
+let value = {
+    PE: 99,
+    IT: 88,
+    Math: 122,
+    Eng: {
+        firstSem: 44,
+        secondSem: 55,
+    },
+};
+
+let NewValue = double(value);
+console.log(NewValue);
